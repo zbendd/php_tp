@@ -39,7 +39,7 @@
                 //https://stackoverflow.com/questions/21177001/php-create-an-array-for-every-paragraph
                 //https://www.geeksforgeeks.org/how-to-parse-a-json-file-in-php/
                 // Read the JSON file 
-                $json = file_get_contents('data.json');
+                $json = file_get_contents('data_article.json');
                 
                 // Decode the JSON file
                 $articles = json_decode($json,true);
