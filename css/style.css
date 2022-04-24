@@ -1,0 +1,294 @@
+/* List of memes to use :
+    - https://lesjoiesducode.fr/content/045/langages-cv-huile.jpg
+    - https://lesjoiesducode.fr/content/045/ddos-mr-incredible-Omiganox.webp
+    - https://lesjoiesducode.fr/content/045/meme-angry-cat-alinenosekai.jpg
+    - https://lesjoiesducode.fr/content/045/meme-variable-sans-utiliser-ide.jpg
+    - https://lesjoiesducode.fr/content/045/macron-poutine-margin-gromgrom.webp
+*/
+
+/* Used to remove most of default values from web browsers */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+    font-size: inherit;
+    font-weight: inherit;
+    color: inherit;
+    text-decoration: inherit;
+}
+
+:root {
+  --page-width: 1280px;
+  
+  --header-height: 70px;
+  --header-height-padding: 20px;
+  
+  --index-main-article-height: 300px;
+  
+  --product-details-img-width: 300px;
+  --product-details-description-width: 700px;
+  --product-details-order-width: 240px;
+}
+
+.menu {
+    width: 100%;
+    min-width: var(--page-width);
+    height: var(--header-height);
+    background: black;
+    color: white;
+}
+
+.menu > nav {
+    width: var(--page-width);
+    margin: 0 auto;
+}
+
+.menu > nav a {
+    display: inline-block;
+    box-sizing: border-box;
+    height: var(--header-height);
+    padding: var(--header-height-padding) 10px;
+    line-height: calc(var(--header-height) - 2 * var(--header-height-padding));
+    
+    font-size: 18px;}
+.menu > nav a:hover, .menu > nav a.active {
+    background: #333;
+}
+
+/* titre principal */
+.menu > nav > a {
+    float: left;
+    
+    font-size: 24px;
+}
+
+/* premier menu */
+.menu > nav > nav:not(:last-child) {
+    float: left;
+    padding-left: 50px;
+}
+
+/* deuxième menu */
+.menu > nav > nav:last-child {
+    float: right;
+}
+
+#main{
+    box-sizing: border-box;
+    width: var(--page-width);
+    margin: 30px auto;
+}
+
+/*---------------------------- INDEX ----------------------------*/
+.indexPage > article {
+    box-sizing: border-box;
+    width: 100%;
+    height: var(--index-main-article-height);
+    padding: 20px;
+    margin: 15px 0;
+    overflow: hidden;
+    background: #eee;
+}
+
+.indexPage > article > div {
+    width: 50%;
+    height: 100%;
+    float: left;
+    overflow: hidden;}
+.indexPage > article:nth-child(even) > div {
+    float: right;
+}
+
+.indexPage > article > div.imgContainer > img {
+    width: 100%;
+}
+
+.indexPage > article > div.textContainer > h3 {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.indexPage > article > div.textContainer > p {
+    padding: 10px;
+    
+    text-align: justify;
+    font-size: 16px;
+}
+
+.indexPage > article > div.textContainer > a {
+    display: block;
+    position: absolute;
+    width: calc(var(--page-width) / 2 - 2 * 10px - 20px);
+    height: 30px;
+    margin: 230px 0 0 10px;
+    line-height: 30px;
+    background: black;
+    
+    font-size: 18px;
+    color: white;
+    text-align: center;
+    text-decoration: underline;}
+.indexPage > article > div.textContainer > a:hover {
+    background: #333;
+}
+
+/*---------------------------- PRESENTATION ----------------------------*/
+.presentationPage {
+    background: #eee;
+    padding: 20px;
+}
+
+.presentationPage > h2 {
+    font-size: 22px;
+    
+    text-align: center;
+}
+
+.presentationPage > p {
+    padding: 10px 100px 0 100px;
+    
+    text-align: justify;
+}
+
+.presentationPage > hr {
+    border: 0;
+    width: 20%;
+    height: 2px;
+    margin: 30px auto 10px auto;
+    background: black;
+}
+
+/*---------------------------- LISTE PRODUITS ----------------------------*/
+.productListPage > nav {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    grid-auto-rows: minmax(100px, auto);
+}
+
+.productThumbnail {
+    display: block;
+    box-sizing: border-box;
+    height: 250px;
+    padding: 10px;
+    background: #eee;
+    overflow: hidden;
+}
+
+.productThumbnail > a {
+    display: block;
+    width: 100%;
+    height: calc(250px - 2 * 10px - 40px);
+    overflow: hidden;
+}
+
+.productThumbnail > a > h3 {
+    display: block;
+    width: 100%;
+    height: 30px;
+    overflow: hidden;
+    
+    line-height: 30px;
+    font-size: 20px;
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.productThumbnail > a > .imgContainer,
+.productThumbnail > a > .imgContainer > img {
+    width: 100%;
+}
+
+.productThumbnail > nav {
+    box-sizing: border-box;
+    width: 100%;
+    height: 40px;
+    padding: 10px 0 0 0;
+    overflow: hidden;
+}
+
+.tagsContainer > a {
+    box-sizing: border-box;
+    display: inline-block;
+    height: 30px;
+    padding: 5px;
+    background: black;
+    
+    line-height: 20px;
+    color: white;
+}
+
+/*---------------------------- DETAILS PRODUIT ----------------------------*/
+.productDetailsPage {
+    background: #eee;
+    padding: 20px;
+}
+
+.productDetailsPage > img {
+    width: var(--product-details-img-width);
+    float: left;
+}
+
+.productDetailsPage > .description {
+    box-sizing: border-box;
+    width: var(--product-details-description-width);
+    margin-left: 300px;
+    padding: 0 0 0 20px;
+}
+
+.productDetailsPage > .description > h2 {
+    font-size: 26px;
+    padding: 0 0 10px 0;
+}
+
+.productDetailsPage > .description > p {
+    padding: 0 0 10px 0;
+    
+    text-align: justify;
+}
+
+.productDetailsPage > .order {
+    box-sizing: border-box;
+    width: var(--product-details-order-width);
+    padding: 40px 0 0 20px;
+    float: right;
+}
+
+.productDetailsPage > .order > form > input {
+    box-sizing: border-box;
+    display: block;
+    height: 40px;
+    width: 100%;
+    padding: 10px;
+    margin: 0 0 10px 0;
+    
+    line-height: 20px;
+}
+
+.productDetailsPage > .order > form > input[type="submit"] {
+    background: black;
+    border: 0;
+    cursor: pointer;
+    
+    color: white;
+    text-align: center;
+}
+
+.productDetailsPage > .order > form > input[type="number"] {
+    background: #fff;
+    border: 2px solid black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
