@@ -39,11 +39,11 @@
     $product6 = new Product('Titre du produit', 'https://lesjoiesducode.fr/content/045/langages-cv-huile.jpg',$tags);
     $products = array($product1, $product2,$product3, $product4,$product5, $product6);
 
-    foreach($products as $i)
+    foreach($products as $key =>$i)
     {
 ?>
                 <div class="productThumbnail">
-                    <a href="./produit-details.html">
+                    <a href="./produit-details.html?id=<?=$key?>">
                         <h3><?=$i->getName()?></h3>
                         <div class="imgContainer"><img src=<?=$i->getImgUrl()?> alt="illustration du produit"/></div>
                     </a>
